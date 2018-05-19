@@ -25,7 +25,7 @@ WORKDIR /airsonic
 ENV \
   AIRSONIC_DIR=/airsonic \
   AIRSONIC_PORT=4040 \
-  CONTEXT_PATH="" \
+  CONTEXT_PATH=/ \
   JAVA_OPTS=""
 
 EXPOSE 4040
