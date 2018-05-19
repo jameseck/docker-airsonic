@@ -23,6 +23,7 @@ ADD run.sh /usr/local/bin/
 WORKDIR /airsonic
 
 ENV \
+  DEBUG=false \
   AIRSONIC_DIR=/airsonic \
   AIRSONIC_PORT=4040 \
   CONTEXT_PATH=/ \

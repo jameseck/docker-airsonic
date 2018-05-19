@@ -6,6 +6,11 @@ mkdir -p $AIRSONIC_DIR/data/transcode
 ln -fs /usr/bin/ffmpeg $AIRSONIC_DIR/data/transcode/ffmpeg
 ln -fs /usr/bin/lame $AIRSONIC_DIR/data/transcode/lame
 
+if [ "${DEBUG}" == "true" ]; then
+  [ -f $AIRSONIC_DIR/config/application.properties ] || echo > $AIRSONIC_DIR/config/application.properties
+  sed '/^logging\.level\.root=/{h;s/=.*/=DEBUG/};${x;/^$/{s//logging.level.root=DEBUG/;H};x}' -i $AIRSONIC_DIR/config/application.properties
+fi
+
 if [[ $# -lt 1 ]] || [[ ! "$1" == "java"* ]]; then
 
     java_opts_array=()
