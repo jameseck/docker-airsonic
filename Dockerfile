@@ -14,9 +14,9 @@ RUN \
   yum clean all && \
   rm -rf /var/cache/yum/*
 RUN \
-  mkdir --mode=0775 /airsonic && \
+  mkdir --mode=0777 /airsonic && \
   curl -L "${AIRSONIC_URL}" -o /airsonic/airsonic.war && \
-  chmod -R 0775 /var/log /airsonic
+  chmod -R 0777 /var/log /airsonic
 
 ADD run.sh /usr/local/bin/
 
