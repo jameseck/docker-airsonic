@@ -2,8 +2,8 @@ FROM centos:7
 
 MAINTAINER James Eckersall <james.eckersall@gmail.com>
 
-ARG AIRSONIC_VERSION=bob
-ARG AIRSONIC_URL=bob
+ARG AIRSONIC_VERSION=v10.1.1
+ARG AIRSONIC_URL=https://github.com/airsonic/airsonic/releases/download/v10.1.1/airsonic.war
 
 RUN \
   yum install -y epel-release yum-utils && \
