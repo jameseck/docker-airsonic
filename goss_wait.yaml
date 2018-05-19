@@ -1,0 +1,4 @@
+---
+addr:
+  tcp://localhost:4040:
+    reachable: true

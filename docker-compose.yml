@@ -1,0 +1,8 @@
+version: '2'
+services:
+  airsonic:
+    build: .
+    image: jameseckersall/airsonic
+    user: "100000:100000"
+    ports:
+    - 4040:4040

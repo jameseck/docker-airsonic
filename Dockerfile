@@ -18,8 +18,18 @@ RUN \
   curl -L "${AIRSONIC_URL}" -o /airsonic/airsonic.war && \
   chmod -R 0775 /var/log /airsonic
 
+ADD run.sh /usr/local/bin/
+
+WORKDIR /airsonic
+
+ENV \
+  AIRSONIC_DIR=/airsonic \
+  AIRSONIC_PORT=4040 \
+  CONTEXT_PATH="" \
+  JAVA_OPTS=""
+
 EXPOSE 4040
 
 VOLUME ["/airsonic/config"]
 
-ENTRYPOINT [ "/usr/local/bin/run.sh" ]
+ENTRYPOINT [ "bash", "/usr/local/bin/run.sh" ]

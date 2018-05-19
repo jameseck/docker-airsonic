@@ -1,0 +1,15 @@
+package:
+  java-1.8.0-openjdk:
+    installed: true
+process:
+  java:
+    running: true
+file:
+  /airsonic/data/airsonic.properties:
+    exists: true
+http:
+  http://localhost:4040/login:
+    status: 200
+    timeout: 10000
+    body:
+    - '<title>Airsonic</title>'
